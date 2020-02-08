@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //箭头函数
+    let f1 = (x) => {console.log(x)};
+    console.log(5);
+
+    //箭头函数简化写法
+
+    //有且只有一个形参,省略小括号
+    let f2 = x => {console.log(x)};
+    console.log(5);
+
+    //函数体只有一句,可以省略大括号
+    let f3 = x => console.log(x);
+
+    //函数体只有一条语句.并且是return语句
+    // let f4 = function(x){
+    //     return x+1;
+    // }
+
+    let f4 = x => x+1;
+    //注意:在上述情况下,return返回的值是一个对象,对象外面要加括号,不加报错
+    let f5 = function(x){
+        return {a: x};
+    }
+    //let f5 = x => {a: x}; 报错,会把对象的大括号当成函数的大括号
+    let f5 = x => ({a: x});
+    console.log(f1(1));
+    
+
+</script>
+</html>

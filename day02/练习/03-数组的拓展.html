@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = [1,2,3,-4,5];
+
+    //find:在数据中找出第一个满足条件的值
+     let result = arr.find(item => item<1);
+     console.log(result);
+     
+     //findIndex:在数据中找出第一个满足条件的值的下标
+     let result1 = arr.findIndex(item => item<1)
+     console.log(result1);
+
+     //includes():判断数据是否包含某个值,返回值为布尔值
+     let result2 = arr.includes(3)//只有一个参数表示从下标为零的成员开始查找
+     console.log(result2);
+     let result3 = arr.includes(1,2)//表示从下标为2的成员开始查找
+     console.log(result3);
+
+
+
+
+     
+     
+</script>
+</html>

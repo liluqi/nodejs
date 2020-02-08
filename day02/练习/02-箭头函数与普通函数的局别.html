@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //箭头函数没有arguments,可以用reste参数
+    const f1 = function() {console.log(arguments);
+    };
+    f1(1,2,3);
+
+    const f2 = (...arg) => {console.log(arg);
+    };
+    f2(1,2,3);
+
+    
+    //箭头函数不能用作构造器
+    const f3 = function(){};
+    let obj = new f3();
+    console.log(obj);
+    
+    //报错: Uncaught TypeError: f4 is not a constructor
+    // const f4 = () => {};
+    // let obj1 = new f4();
+    // console.log(obj1);
+    //内部没有this
+    let obj_2 = {
+        name: "zhangsan",
+        f5: function(){
+            console.log(this);
+            console.log(this.name);
+        },
+        f6: () => {
+            console.log(this);
+            console.log(this.name);
+            
+        }
+    }
+    // console.log(this);
+    obj_2.f5();//this的指向: 谁调用该函数就指向谁
+    obj_2.f6();//本身没有this,是继承的obj_2对象外面的this
+</script>
+</html>
