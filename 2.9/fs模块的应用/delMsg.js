@@ -4,7 +4,10 @@ const fs = require('fs');
 
 const path = require('path')
 
-const FILEPATH = path.join(__dirname, 'massage.json')
+const FILENAME = 'massage.json';
+//消除魔术数
+
+const FILEPATH = path.join(__dirname,FILENAME)
 
 const getMsg = ()=>{
     // 使用 同步 的方式读
@@ -21,13 +24,9 @@ const getMsg = ()=>{
 
 }
 
-function delMsg(id) {
+const delMsg = id => {
     let arr = getMsg();
-    let idx = arr.findIndex(function (item) {
-        if (item.id === id) {
-            return true;
-        }
-    })
+    let idx = arr.findIndex(item => item.id === id)
     arr.splice(idx, 1);
     var Str = JSON.stringify(arr);
     fs.writeFileSync(FILEPATH, Str, "utf8")
